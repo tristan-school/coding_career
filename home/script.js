@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const dots = document.querySelectorAll('.slide-dots .dot');
     const themeToggle = document.getElementById('themeToggle');
     const fullscreenToggle = document.getElementById('fullscreenToggle');
+    const slideViewWrapper = document.querySelector('.slide-view-wrapper');
 
     // Tab Elements
     const tabBtns = document.querySelectorAll('.tab-btn');
@@ -29,6 +30,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const activeSlide = document.getElementById(`slide-${currentSlide}`);
         if (activeSlide) {
             activeSlide.classList.add('active');
+        }
+
+        // Reset scroll position to top when slide changes
+        if (slideViewWrapper) {
+            slideViewWrapper.scrollTop = 0;
         }
 
         // Update UI Indicators
