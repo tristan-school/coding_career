@@ -49,7 +49,7 @@
 }
 
 /* ==========================================================================
-   Global Reset & Layout
+   Global Reset & Screen Layout (App Mode)
    ========================================================================== */
 * {
     box-sizing: border-box;
@@ -57,26 +57,37 @@
     padding: 0;
 }
 
+html, body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden; /* Lock outer viewport scrollbar */
+}
+
 body {
     font-family: var(--font-sans);
     background-color: var(--bg-primary);
     color: var(--text-primary);
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    overflow-x: hidden;
     transition: background-color var(--transition-fast), color var(--transition-fast);
 }
 
-/* Header Navbar */
+/* Fixed Header Container */
+.fixed-top-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+}
+
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
+    padding: 0.85rem 2rem;
     background-color: var(--bg-secondary);
     border-bottom: 1px solid var(--border-color);
-    z-index: 10;
 }
 
 .logo {
@@ -106,8 +117,8 @@ body {
     background: transparent;
     border: 1px solid var(--border-color);
     color: var(--text-primary);
-    width: 40px;
-    height: 40px;
+    width: 38px;
+    height: 38px;
     border-radius: var(--radius-sm);
     cursor: pointer;
     display: flex;
@@ -141,33 +152,39 @@ body {
     transition: width var(--transition-smooth);
 }
 
-/* Slide Container */
-.slide-container {
+/* ==========================================================================
+   Middle Scrollable View Area
+   ========================================================================== */
+.slide-view-wrapper {
     flex: 1;
-    position: relative;
+    margin-top: 65px; /* Height of header + progress */
+    margin-bottom: 65px; /* Height of bottom nav */
+    overflow-y: auto;
+    overflow-x: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 2rem;
-    max-width: 1200px;
+}
+
+.slide-container {
     width: 100%;
-    margin: 0 auto;
+    max-width: 1100px;
+    margin: auto;
+    position: relative;
 }
 
 .slide {
-    position: absolute;
-    width: 100%;
+    display: none;
     opacity: 0;
-    pointer-events: none;
-    transform: translateY(20px) scale(0.98);
-    transition: opacity 0.4s ease, transform 0.4s ease;
+    transform: translateY(15px);
+    transition: opacity 0.35s ease, transform 0.35s ease;
 }
 
 .slide.active {
-    position: relative;
+    display: block;
     opacity: 1;
-    pointer-events: auto;
-    transform: translateY(0) scale(1);
+    transform: translateY(0);
 }
 
 /* Typography Components */
@@ -184,9 +201,9 @@ body {
 }
 
 .slide-title {
-    font-size: 2.5rem;
+    font-size: 2.3rem;
     font-weight: 800;
-    line-height: 1.2;
+    line-height: 1.25;
     margin-bottom: 0.75rem;
 }
 
@@ -197,16 +214,16 @@ body {
 }
 
 .slide-subtitle {
-    font-size: 1.15rem;
+    font-size: 1.1rem;
     color: var(--text-secondary);
-    margin-bottom: 2rem;
+    margin-bottom: 1.75rem;
     max-width: 800px;
 }
 
 /* Grids */
 .grid {
     display: grid;
-    gap: 1.5rem;
+    gap: 1.25rem;
 }
 
 .grid-2 { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
@@ -215,7 +232,7 @@ body {
 .card {
     background-color: var(--bg-card);
     border: 1px solid var(--border-color);
-    padding: 1.75rem;
+    padding: 1.5rem;
     border-radius: var(--radius-md);
     box-shadow: var(--shadow-soft);
     transition: var(--transition-fast);
@@ -228,18 +245,18 @@ body {
 }
 
 .card-icon {
-    font-size: 2rem;
-    margin-bottom: 1rem;
+    font-size: 1.8rem;
+    margin-bottom: 0.75rem;
 }
 
 .card h3 {
     margin-bottom: 0.5rem;
-    font-size: 1.25rem;
+    font-size: 1.2rem;
 }
 
 .card p {
     color: var(--text-secondary);
-    font-size: 0.95rem;
+    font-size: 0.92rem;
     line-height: 1.5;
     margin-bottom: 1rem;
 }
@@ -247,7 +264,7 @@ body {
 .metric {
     font-weight: 700;
     color: var(--accent-cyan);
-    font-size: 0.9rem;
+    font-size: 0.85rem;
 }
 
 /* Interactive Tabs (Slide 2) */
@@ -262,8 +279,8 @@ body {
     display: flex;
     gap: 0.5rem;
     border-bottom: 1px solid var(--border-color);
-    padding-bottom: 1rem;
-    margin-bottom: 1.5rem;
+    padding-bottom: 0.85rem;
+    margin-bottom: 1.25rem;
     overflow-x: auto;
 }
 
@@ -271,7 +288,7 @@ body {
     background: transparent;
     border: none;
     color: var(--text-secondary);
-    padding: 0.6rem 1.2rem;
+    padding: 0.5rem 1.1rem;
     border-radius: var(--radius-sm);
     font-weight: 600;
     cursor: pointer;
@@ -305,7 +322,7 @@ body {
 .panel-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 2rem;
+    gap: 1.5rem;
     align-items: center;
 }
 
@@ -326,7 +343,7 @@ body {
     color: var(--text-primary);
     padding: 0.3rem 0.75rem;
     border-radius: 20px;
-    font-size: 0.85rem;
+    font-size: 0.82rem;
 }
 
 .code-preview {
@@ -360,7 +377,7 @@ body {
 .code-preview pre {
     padding: 1.25rem;
     font-family: var(--font-mono);
-    font-size: 0.88rem;
+    font-size: 0.85rem;
     color: #e5e7eb;
     overflow-x: auto;
 }
@@ -372,13 +389,12 @@ body {
 .attr { color: #fbbf24; }
 .num { color: #a78bfa; }
 
-/* Interactive Accordion Cards (Slide 3) */
+/* Interactive Cards (Slide 3) */
 .interactive-card {
     background-color: var(--bg-card);
     border: 1px solid var(--border-color);
     border-radius: var(--radius-md);
-    padding: 1.5rem;
-    transition: var(--transition-fast);
+    padding: 1.25rem;
 }
 
 .ic-header {
@@ -388,39 +404,39 @@ body {
 }
 
 .ic-icon {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
 }
 
 .ic-title h3 {
-    font-size: 1.15rem;
+    font-size: 1.1rem;
 }
 
 .ic-title p {
     color: var(--text-secondary);
-    font-size: 0.85rem;
+    font-size: 0.82rem;
 }
 
 .ic-body {
-    margin-top: 1rem;
-    padding-top: 1rem;
+    margin-top: 0.85rem;
+    padding-top: 0.85rem;
     border-top: 1px solid var(--border-color);
     color: var(--text-secondary);
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     line-height: 1.5;
 }
 
 /* Pathways Grid (Slide 4) */
 .pathway-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.25rem;
 }
 
 .pathway-card {
     background-color: var(--bg-card);
     border: 1px solid var(--border-color);
     border-radius: var(--radius-md);
-    padding: 1.75rem;
+    padding: 1.5rem;
     display: flex;
     flex-direction: column;
 }
@@ -431,7 +447,7 @@ body {
 }
 
 .pathway-badge {
-    font-size: 0.75rem;
+    font-size: 0.72rem;
     text-transform: uppercase;
     letter-spacing: 1px;
     color: var(--text-muted);
@@ -443,55 +459,55 @@ body {
 }
 
 .pathway-header h3 {
-    font-size: 1.5rem;
-    margin: 0.25rem 0;
+    font-size: 1.35rem;
+    margin: 0.2rem 0;
 }
 
 .timeframe {
-    font-size: 0.85rem;
+    font-size: 0.82rem;
     color: var(--text-secondary);
-    margin-bottom: 1.25rem;
+    margin-bottom: 1rem;
 }
 
 .pathway-list {
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
-    font-size: 0.9rem;
+    gap: 0.65rem;
+    font-size: 0.88rem;
     color: var(--text-secondary);
 }
 
 /* Future Grid (Slide 5) */
 .future-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 1.25rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
 }
 
 .future-box {
     background-color: var(--bg-card);
     border: 1px solid var(--border-color);
-    padding: 1.5rem;
+    padding: 1.25rem;
     border-radius: var(--radius-md);
 }
 
 .future-box h3 {
-    margin-bottom: 0.5rem;
-    font-size: 1.1rem;
+    margin-bottom: 0.4rem;
+    font-size: 1.05rem;
 }
 
 .future-box p {
     color: var(--text-secondary);
-    font-size: 0.9rem;
+    font-size: 0.88rem;
     line-height: 1.5;
 }
 
 .cta-banner {
     background: var(--bg-secondary);
     border: 1px solid var(--accent-blue);
-    padding: 1.75rem;
+    padding: 1.5rem;
     border-radius: var(--radius-lg);
     display: flex;
     justify-content: space-between;
@@ -507,7 +523,7 @@ body {
     background: var(--accent-gradient);
     color: white;
     border: none;
-    padding: 0.85rem 1.5rem;
+    padding: 0.75rem 1.35rem;
     border-radius: var(--radius-sm);
     font-weight: 700;
     cursor: pointer;
@@ -520,21 +536,30 @@ body {
     transform: scale(1.02);
 }
 
-/* Footer Controls */
+/* ==========================================================================
+   Fixed Navigation Footer (Always Fixed at Bottom of Screen)
+   ========================================================================== */
 .footer-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 65px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
+    padding: 0 2rem;
     background-color: var(--bg-secondary);
     border-top: 1px solid var(--border-color);
+    z-index: 100;
+    backdrop-filter: blur(8px);
 }
 
 .nav-btn {
     background-color: var(--bg-card);
     border: 1px solid var(--border-color);
     color: var(--text-primary);
-    padding: 0.6rem 1.25rem;
+    padding: 0.55rem 1.2rem;
     border-radius: var(--radius-sm);
     font-weight: 600;
     cursor: pointer;
@@ -559,7 +584,7 @@ body {
     gap: 0.5rem;
 }
 
-.dot {
+.slide-dots .dot {
     width: 12px;
     height: 12px;
     border-radius: 50%;
@@ -569,9 +594,9 @@ body {
     transition: var(--transition-fast);
 }
 
-.dot.active {
+.slide-dots .dot.active {
     background-color: var(--accent-blue);
-    transform: scale(1.2);
+    transform: scale(1.25);
 }
 
 .slide-indicator {
