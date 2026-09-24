@@ -11,97 +11,100 @@
 </head>
 <body>
 
-    <!-- Header / Navbar -->
-    <header class="navbar">
-        <div class="logo">
-            <span class="logo-icon">&lt;/&gt;</span>
-            <span class="logo-text">DevCareer<span class="accent">Hub</span></span>
-        </div>
-        
-        <div class="nav-controls">
-            <button id="themeToggle" class="btn-icon" aria-label="Toggle Theme">
-                <span class="icon-sun">☀️</span>
-                <span class="icon-moon">🌙</span>
-            </button>
-            <button id="fullscreenToggle" class="btn-icon" aria-label="Toggle Fullscreen">
-                <span class="icon-expand">⛶</span>
-            </button>
-        </div>
-    </header>
+    <!-- Fixed Header Container -->
+    <div class="fixed-top-wrapper">
+        <header class="navbar">
+            <div class="logo">
+                <span class="logo-icon">&lt;/&gt;</span>
+                <span class="logo-text">DevCareer<span class="accent">Hub</span></span>
+            </div>
+            
+            <div class="nav-controls">
+                <button id="themeToggle" class="btn-icon" aria-label="Toggle Theme">
+                    <span class="icon-sun">☀️</span>
+                    <span class="icon-moon">🌙</span>
+                </button>
+                <button id="fullscreenToggle" class="btn-icon" aria-label="Toggle Fullscreen">
+                    <span class="icon-expand">⛶</span>
+                </button>
+            </div>
+        </header>
 
-    <!-- Global Progress Bar -->
-    <div class="progress-container">
-        <div id="progressBar" class="progress-bar"></div>
+        <!-- Global Progress Bar -->
+        <div class="progress-container">
+            <div id="progressBar" class="progress-bar"></div>
+        </div>
     </div>
 
-    <!-- Main Slide Viewer Container -->
-    <main class="slide-container">
+    <!-- Main Scrollable Slide Viewer Area -->
+    <main class="slide-view-wrapper">
+        <div class="slide-container">
 
-        <!-- SLIDE 1: Introduction -->
-        <section class="slide active" id="slide-1" data-slide="1">
-            <div class="slide-content">
-                <div class="badge">Slide 01 • Introduction</div>
-                <h1 class="slide-title">Why Choose a Career in <span class="gradient-text">Software Engineering</span>?</h1>
-                <p class="slide-subtitle">Coding is more than syntax — it's the art of digital building, problem-solving, and driving worldwide technological innovation.</p>
-                
-                <div class="grid grid-3">
-                    <div class="card hover-glow">
-                        <div class="card-icon">📈</div>
-                        <h3>Unmatched Demand</h3>
-                        <p>Software roles continue to grow substantially above national averages across nearly every tech and traditional sector globally.</p>
-                        <div class="metric">+25% Growth</div>
-                    </div>
+            <!-- SLIDE 1: Introduction -->
+            <section class="slide active" id="slide-1" data-slide="1">
+                <div class="slide-content">
+                    <div class="badge">Slide 01 • Introduction</div>
+                    <h1 class="slide-title">Why Choose a Career in <span class="gradient-text">Software Engineering</span>?</h1>
+                    <p class="slide-subtitle">Coding is more than syntax — it's the art of digital building, problem-solving, and driving worldwide technological innovation.</p>
                     
-                    <div class="card hover-glow">
-                        <div class="card-icon">🧠</div>
-                        <h3>Creative Problem Solving</h3>
-                        <p>Transform complex abstract ideas into practical tools, websites, high-performance apps, and autonomous algorithms.</p>
-                        <div class="metric">High Impact</div>
-                    </div>
+                    <div class="grid grid-3">
+                        <div class="card hover-glow">
+                            <div class="card-icon">📈</div>
+                            <h3>Unmatched Demand</h3>
+                            <p>Software roles continue to grow substantially above national averages across nearly every tech and traditional sector globally.</p>
+                            <div class="metric">+25% Growth</div>
+                        </div>
+                        
+                        <div class="card hover-glow">
+                            <div class="card-icon">🧠</div>
+                            <h3>Creative Problem Solving</h3>
+                            <p>Transform complex abstract ideas into practical tools, websites, high-performance apps, and autonomous algorithms.</p>
+                            <div class="metric">High Impact</div>
+                        </div>
 
-                    <div class="card hover-glow">
-                        <div class="card-icon">🌐</div>
-                        <h3>Flexibility & Autonomy</h3>
-                        <p>High degree of remote work flexibility, global talent mobility, flexible hours, and freelance or contract opportunities.</p>
-                        <div class="metric">Remote First</div>
+                        <div class="card hover-glow">
+                            <div class="card-icon">🌐</div>
+                            <h3>Flexibility & Autonomy</h3>
+                            <p>High degree of remote work flexibility, global talent mobility, flexible hours, and freelance or contract opportunities.</p>
+                            <div class="metric">Remote First</div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- SLIDE 2: Common Career Paths -->
-        <section class="slide" id="slide-2" data-slide="2">
-            <div class="slide-content">
-                <div class="badge">Slide 02 • Specializations</div>
-                <h2 class="slide-title">Explore Tech <span class="gradient-text">Career Paths</span></h2>
-                <p class="slide-subtitle">Select a discipline below to view key responsibilities, popular tech stacks, and real-world application examples.</p>
+            <!-- SLIDE 2: Common Career Paths -->
+            <section class="slide" id="slide-2" data-slide="2">
+                <div class="slide-content">
+                    <div class="badge">Slide 02 • Specializations</div>
+                    <h2 class="slide-title">Explore Tech <span class="gradient-text">Career Paths</span></h2>
+                    <p class="slide-subtitle">Select a discipline below to view key responsibilities, popular tech stacks, and real-world application examples.</p>
 
-                <div class="tab-system">
-                    <div class="tab-buttons">
-                        <button class="tab-btn active" data-tab="frontend">Front-End</button>
-                        <button class="tab-btn" data-tab="backend">Back-End</button>
-                        <button class="tab-btn" data-tab="fullstack">Full-Stack</button>
-                        <button class="tab-btn" data-tab="data-ai">Data & AI</button>
-                    </div>
+                    <div class="tab-system">
+                        <div class="tab-buttons">
+                            <button class="tab-btn active" data-tab="frontend">Front-End</button>
+                            <button class="tab-btn" data-tab="backend">Back-End</button>
+                            <button class="tab-btn" data-tab="fullstack">Full-Stack</button>
+                            <button class="tab-btn" data-tab="data-ai">Data & AI</button>
+                        </div>
 
-                    <div class="tab-contents">
-                        <!-- Front End -->
-                        <div class="tab-panel active" id="panel-frontend">
-                            <div class="panel-grid">
-                                <div class="panel-info">
-                                    <h3>Front-End Developer</h3>
-                                    <p>Crafts the visual elements, user interface (UI), and user experience (UX) that users interact with directly in browsers and mobile apps.</p>
-                                    <div class="tag-group">
-                                        <span class="tag">JavaScript</span>
-                                        <span class="tag">TypeScript</span>
-                                        <span class="tag">React</span>
-                                        <span class="tag">HTML5 / CSS3</span>
-                                        <span class="tag">Tailwind</span>
+                        <div class="tab-contents">
+                            <!-- Front End -->
+                            <div class="tab-panel active" id="panel-frontend">
+                                <div class="panel-grid">
+                                    <div class="panel-info">
+                                        <h3>Front-End Developer</h3>
+                                        <p>Crafts the visual elements, user interface (UI), and user experience (UX) that users interact with directly in browsers and mobile apps.</p>
+                                        <div class="tag-group">
+                                            <span class="tag">JavaScript</span>
+                                            <span class="tag">TypeScript</span>
+                                            <span class="tag">React</span>
+                                            <span class="tag">HTML5 / CSS3</span>
+                                            <span class="tag">Tailwind</span>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="code-preview">
-                                    <div class="code-header"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span> App.jsx</div>
-                                    <pre><code><span class="kwd">function</span> <span class="fun">UserInterface</span>() {
+                                    <div class="code-preview">
+                                        <div class="code-header"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span> App.jsx</div>
+                                        <pre><code><span class="kwd">function</span> <span class="fun">UserInterface</span>() {
   <span class="kwd">const</span> [state, setState] = <span class="fun">useState</span>(true);
   <span class="kwd">return</span> (
     &lt;<span class="tag-name">button</span> <span class="attr">onClick</span>={() =&gt; <span class="fun">setState</span>(!state)}&gt;
@@ -109,244 +112,245 @@
     &lt;/<span class="tag-name">button</span>&gt;
   );
 }</code></pre>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Back End -->
-                        <div class="tab-panel" id="panel-backend">
-                            <div class="panel-grid">
-                                <div class="panel-info">
-                                    <h3>Back-End Developer</h3>
-                                    <p>Architects server-side logic, designs relational and NoSQL databases, builds REST & GraphQL APIs, and ensures application security.</p>
-                                    <div class="tag-group">
-                                        <span class="tag">Python</span>
-                                        <span class="tag">Node.js</span>
-                                        <span class="tag">Java</span>
-                                        <span class="tag">PostgreSQL</span>
-                                        <span class="tag">Go</span>
                                     </div>
                                 </div>
-                                <div class="code-preview">
-                                    <div class="code-header"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span> server.js</div>
-                                    <pre><code><span class="kwd">app</span>.<span class="fun">get</span>(<span class="str">'/api/users'</span>, <span class="kwd">async</span> (req, res) =&gt; {
+                            </div>
+
+                            <!-- Back End -->
+                            <div class="tab-panel" id="panel-backend">
+                                <div class="panel-grid">
+                                    <div class="panel-info">
+                                        <h3>Back-End Developer</h3>
+                                        <p>Architects server-side logic, designs relational and NoSQL databases, builds REST & GraphQL APIs, and ensures application security.</p>
+                                        <div class="tag-group">
+                                            <span class="tag">Python</span>
+                                            <span class="tag">Node.js</span>
+                                            <span class="tag">Java</span>
+                                            <span class="tag">PostgreSQL</span>
+                                            <span class="tag">Go</span>
+                                        </div>
+                                    </div>
+                                    <div class="code-preview">
+                                        <div class="code-header"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span> server.js</div>
+                                        <pre><code><span class="kwd">app</span>.<span class="fun">get</span>(<span class="str">'/api/users'</span>, <span class="kwd">async</span> (req, res) =&gt; {
   <span class="kwd">const</span> users = <span class="kwd">await</span> db.<span class="fun">query</span>(
     <span class="str">'SELECT * FROM users WHERE active = true'</span>
   );
   res.<span class="fun">json</span>(users);
 });</code></pre>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Full Stack -->
-                        <div class="tab-panel" id="panel-fullstack">
-                            <div class="panel-grid">
-                                <div class="panel-info">
-                                    <h3>Full-Stack Developer</h3>
-                                    <p>Bridges the gap between client experience and back-end performance. Oversees complete end-to-end web application architectures.</p>
-                                    <div class="tag-group">
-                                        <span class="tag">Next.js</span>
-                                        <span class="tag">Node + React</span>
-                                        <span class="tag">GraphQL</span>
-                                        <span class="tag">Docker</span>
-                                        <span class="tag">MongoDB</span>
                                     </div>
                                 </div>
-                                <div class="code-preview">
-                                    <div class="code-header"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span> fullstack.ts</div>
-                                    <pre><code><span class="kwd">export async function</span> <span class="fun">getServerSideProps</span>() {
+                            </div>
+
+                            <!-- Full Stack -->
+                            <div class="tab-panel" id="panel-fullstack">
+                                <div class="panel-grid">
+                                    <div class="panel-info">
+                                        <h3>Full-Stack Developer</h3>
+                                        <p>Bridges the gap between client experience and back-end performance. Oversees complete end-to-end web application architectures.</p>
+                                        <div class="tag-group">
+                                            <span class="tag">Next.js</span>
+                                            <span class="tag">Node + React</span>
+                                            <span class="tag">GraphQL</span>
+                                            <span class="tag">Docker</span>
+                                            <span class="tag">MongoDB</span>
+                                        </div>
+                                    </div>
+                                    <div class="code-preview">
+                                        <div class="code-header"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span> fullstack.ts</div>
+                                        <pre><code><span class="kwd">export async function</span> <span class="fun">getServerSideProps</span>() {
   <span class="kwd">const</span> data = <span class="kwd">await</span> <span class="fun">fetchData</span>();
   <span class="kwd">return</span> { props: { data } };
 }</code></pre>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Data & AI -->
-                        <div class="tab-panel" id="panel-data-ai">
-                            <div class="panel-grid">
-                                <div class="panel-info">
-                                    <h3>Data & AI Engineer</h3>
-                                    <p>Builds robust data pipelines, trains machine learning models, manages big data storage, and integrates AI capabilities into production apps.</p>
-                                    <div class="tag-group">
-                                        <span class="tag">Python</span>
-                                        <span class="tag">PyTorch</span>
-                                        <span class="tag">SQL</span>
-                                        <span class="tag">Pandas</span>
-                                        <span class="tag">TensorFlow</span>
                                     </div>
                                 </div>
-                                <div class="code-preview">
-                                    <div class="code-header"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span> model.py</div>
-                                    <pre><code><span class="kwd">import</span> torch
+                            </div>
+
+                            <!-- Data & AI -->
+                            <div class="tab-panel" id="panel-data-ai">
+                                <div class="panel-grid">
+                                    <div class="panel-info">
+                                        <h3>Data & AI Engineer</h3>
+                                        <p>Builds robust data pipelines, trains machine learning models, manages big data storage, and integrates AI capabilities into production apps.</p>
+                                        <div class="tag-group">
+                                            <span class="tag">Python</span>
+                                            <span class="tag">PyTorch</span>
+                                            <span class="tag">SQL</span>
+                                            <span class="tag">Pandas</span>
+                                            <span class="tag">TensorFlow</span>
+                                        </div>
+                                    </div>
+                                    <div class="code-preview">
+                                        <div class="code-header"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span> model.py</div>
+                                        <pre><code><span class="kwd">import</span> torch
 <span class="kwd">import</span> torch.nn <span class="kwd">as</span> nn
 
 <span class="kwd">class</span> <span class="fun">Model</span>(nn.Module):
     <span class="kwd">def</span> <span class="fun">__init__</span>(self):
         super().<span class="fun">__init__</span>()
         self.linear = nn.<span class="fun">Linear</span>(<span class="num">10</span>, <span class="num">1</span>)</code></pre>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- SLIDE 3: Essential Skills -->
-        <section class="slide" id="slide-3" data-slide="3">
-            <div class="slide-content">
-                <div class="badge">Slide 03 • Core Competencies</div>
-                <h2 class="slide-title">Skills Beyond <span class="gradient-text">Writing Syntax</span></h2>
-                <p class="slide-subtitle">Modern software engineering requires a balanced mix of technical mastery and interpersonal skills.</p>
+            <!-- SLIDE 3: Essential Skills -->
+            <section class="slide" id="slide-3" data-slide="3">
+                <div class="slide-content">
+                    <div class="badge">Slide 03 • Core Competencies</div>
+                    <h2 class="slide-title">Skills Beyond <span class="gradient-text">Writing Syntax</span></h2>
+                    <p class="slide-subtitle">Modern software engineering requires a balanced mix of technical mastery and interpersonal skills.</p>
 
-                <div class="grid grid-2">
-                    <div class="interactive-card" data-expand="1">
-                        <div class="ic-header">
-                            <span class="ic-icon">🔀</span>
-                            <div class="ic-title">
-                                <h3>Version Control & Git</h3>
-                                <p>Managing code evolution and collaborative workflows</p>
+                    <div class="grid grid-2">
+                        <div class="interactive-card">
+                            <div class="ic-header">
+                                <span class="ic-icon">🔀</span>
+                                <div class="ic-title">
+                                    <h3>Version Control & Git</h3>
+                                    <p>Managing code evolution and collaborative workflows</p>
+                                </div>
+                            </div>
+                            <div class="ic-body">
+                                <p>Git allows developers to branch, test, revert, and merge code seamlessly. Mastering Git workflows (PR reviews, rebasing, merge conflict resolution) is essential in professional teams.</p>
                             </div>
                         </div>
-                        <div class="ic-body">
-                            <p>Git allows developers to branch, test, revert, and merge code seamlessly. Mastering Git workflows (PR reviews, rebasing, merge conflict resolution) is essential in professional teams.</p>
-                        </div>
-                    </div>
 
-                    <div class="interactive-card" data-expand="2">
-                        <div class="ic-header">
-                            <span class="ic-icon">🐛</span>
-                            <div class="ic-title">
-                                <h3>Debugging & Profiling</h3>
-                                <p>Systematic diagnosis and performance optimization</p>
+                        <div class="interactive-card">
+                            <div class="ic-header">
+                                <span class="ic-icon">🐛</span>
+                                <div class="ic-title">
+                                    <h3>Debugging & Profiling</h3>
+                                    <p>Systematic diagnosis and performance optimization</p>
+                                </div>
+                            </div>
+                            <div class="ic-body">
+                                <p>Reading error traces, isolating edge cases, using browser/IDE debuggers, and profiling memory leaks are skills that separate entry-level coders from seasoned pros.</p>
                             </div>
                         </div>
-                        <div class="ic-body">
-                            <p>Reading error traces, isolating edge cases, using browser/IDE debuggers, and profiling memory leaks are skills that separate entry-level coders from seasoned pros.</p>
-                        </div>
-                    </div>
 
-                    <div class="interactive-card" data-expand="3">
-                        <div class="ic-header">
-                            <span class="ic-icon">🏗️</span>
-                            <div class="ic-title">
-                                <h3>System Design & Architecture</h3>
-                                <p>Building scalable, secure, and resilient systems</p>
+                        <div class="interactive-card">
+                            <div class="ic-header">
+                                <span class="ic-icon">🏗️</span>
+                                <div class="ic-title">
+                                    <h3>System Design & Architecture</h3>
+                                    <p>Building scalable, secure, and resilient systems</p>
+                                </div>
+                            </div>
+                            <div class="ic-body">
+                                <p>Designing modular APIs, choosing database schemas, configuring caching layers, and organizing clean code structures ensures systems stay maintainable under heavy traffic.</p>
                             </div>
                         </div>
-                        <div class="ic-body">
-                            <p>Designing modular APIs, choosing database schemas, configuring caching layers, and organizing clean code structures ensures systems stay maintainable under heavy traffic.</p>
-                        </div>
-                    </div>
 
-                    <div class="interactive-card" data-expand="4">
-                        <div class="ic-header">
-                            <span class="ic-icon">💬</span>
-                            <div class="ic-title">
-                                <h3>Technical Communication</h3>
-                                <p>Translating complex technical topics for stakeholders</p>
+                        <div class="interactive-card">
+                            <div class="ic-header">
+                                <span class="ic-icon">💬</span>
+                                <div class="ic-title">
+                                    <h3>Technical Communication</h3>
+                                    <p>Translating complex technical topics for stakeholders</p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="ic-body">
-                            <p>Engineers write documentation, present trade-offs to business leads, mentor team members, and collaborate across product, design, and QA departments.</p>
+                            <div class="ic-body">
+                                <p>Engineers write documentation, present trade-offs to business leads, mentor team members, and collaborate across product, design, and QA departments.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- SLIDE 4: Education Pathways -->
-        <section class="slide" id="slide-4" data-slide="4">
-            <div class="slide-content">
-                <div class="badge">Slide 04 • Learning Pathways</div>
-                <h2 class="slide-title">How to Learn <span class="gradient-text">Software Engineering</span></h2>
-                <p class="slide-subtitle">There is no single "right way" to enter the industry. Compare popular learning routes:</p>
+            <!-- SLIDE 4: Education Pathways -->
+            <section class="slide" id="slide-4" data-slide="4">
+                <div class="slide-content">
+                    <div class="badge">Slide 04 • Learning Pathways</div>
+                    <h2 class="slide-title">How to Learn <span class="gradient-text">Software Engineering</span></h2>
+                    <p class="slide-subtitle">There is no single "right way" to enter the industry. Compare popular learning routes:</p>
 
-                <div class="pathway-container">
-                    <div class="pathway-card">
-                        <div class="pathway-header">
-                            <span class="pathway-badge">Traditional</span>
-                            <h3>CS Degree</h3>
-                            <div class="timeframe">⏳ 3 to 4 Years</div>
+                    <div class="pathway-container">
+                        <div class="pathway-card">
+                            <div class="pathway-header">
+                                <span class="pathway-badge">Traditional</span>
+                                <h3>CS Degree</h3>
+                                <div class="timeframe">⏳ 3 to 4 Years</div>
+                            </div>
+                            <ul class="pathway-list">
+                                <li>✅ Deep theoretical computer science knowledge</li>
+                                <li>✅ Focus on algorithms & OS architecture</li>
+                                <li>✅ Built-in networking & campus recruitment</li>
+                                <li>❌ Higher financial and time commitment</li>
+                            </ul>
                         </div>
-                        <ul class="pathway-list">
-                            <li>✅ Deep theoretical computer science knowledge</li>
-                            <li>✅ Focus on algorithms & OS architecture</li>
-                            <li>✅ Built-in networking & campus recruitment</li>
-                            <li>❌ Higher financial and time commitment</li>
-                        </ul>
-                    </div>
 
-                    <div class="pathway-card featured">
-                        <div class="pathway-header">
-                            <span class="pathway-badge accent">Accelerated</span>
-                            <h3>Coding Bootcamp</h3>
-                            <div class="timeframe">⏳ 3 to 6 Months</div>
+                        <div class="pathway-card featured">
+                            <div class="pathway-header">
+                                <span class="pathway-badge accent">Accelerated</span>
+                                <h3>Coding Bootcamp</h3>
+                                <div class="timeframe">⏳ 3 to 6 Months</div>
+                            </div>
+                            <ul class="pathway-list">
+                                <li>✅ Fast-paced, project-driven learning</li>
+                                <li>✅ Focus on modern, high-demand web stacks</li>
+                                <li>✅ Dedicated career coaching & portfolio building</li>
+                                <li>❌ Fast pace requires full immersion</li>
+                            </ul>
                         </div>
-                        <ul class="pathway-list">
-                            <li>✅ Fast-paced, project-driven learning</li>
-                            <li>✅ Focus on modern, high-demand web stacks</li>
-                            <li>✅ Dedicated career coaching & portfolio building</li>
-                            <li>❌ Fast pace requires full immersion</li>
-                        </ul>
-                    </div>
 
-                    <div class="pathway-card">
-                        <div class="pathway-header">
-                            <span class="pathway-badge">Flexible</span>
-                            <h3>Self-Taught Path</h3>
-                            <div class="timeframe">⏳ Variable / Self-Paced</div>
+                        <div class="pathway-card">
+                            <div class="pathway-header">
+                                <span class="pathway-badge">Flexible</span>
+                                <h3>Self-Taught Path</h3>
+                                <div class="timeframe">⏳ Variable / Self-Paced</div>
+                            </div>
+                            <ul class="pathway-list">
+                                <li>✅ Low cost, maximum schedule flexibility</li>
+                                <li>✅ Custom learning path based on your goals</li>
+                                <li>✅ Rich ecosystem of open-source resources</li>
+                                <li>❌ Requires extreme self-discipline & grit</li>
+                            </ul>
                         </div>
-                        <ul class="pathway-list">
-                            <li>✅ Low cost, maximum schedule flexibility</li>
-                            <li>✅ Custom learning path based on your goals</li>
-                            <li>✅ Rich ecosystem of open-source resources</li>
-                            <li>❌ Requires extreme self-discipline & grit</li>
-                        </ul>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- SLIDE 5: Future Outlook -->
-        <section class="slide" id="slide-5" data-slide="5">
-            <div class="slide-content">
-                <div class="badge">Slide 05 • Future Outlook</div>
-                <h2 class="slide-title">The Future of Code & <span class="gradient-text">AI Collaboration</span></h2>
-                <p class="slide-subtitle">How modern tools like generative AI are transforming—rather than replacing—developer roles.</p>
+            <!-- SLIDE 5: Future Outlook -->
+            <section class="slide" id="slide-5" data-slide="5">
+                <div class="slide-content">
+                    <div class="badge">Slide 05 • Future Outlook</div>
+                    <h2 class="slide-title">The Future of Code & <span class="gradient-text">AI Collaboration</span></h2>
+                    <p class="slide-subtitle">How modern tools like generative AI are transforming—rather than replacing—developer roles.</p>
 
-                <div class="future-grid">
-                    <div class="future-box">
-                        <h3>🤖 AI-Assisted Development</h3>
-                        <p>Tools like GitHub Copilot and ChatGPT assist developers with code autocompletion, boilerplate generation, and syntax lookup. Developers become architects who review and integrate AI outputs.</p>
+                    <div class="future-grid">
+                        <div class="future-box">
+                            <h3>🤖 AI-Assisted Development</h3>
+                            <p>Tools like GitHub Copilot and ChatGPT assist developers with code autocompletion, boilerplate generation, and syntax lookup. Developers become architects who review and integrate AI outputs.</p>
+                        </div>
+
+                        <div class="future-box">
+                            <h3>🔄 Lifelong Adaptability</h3>
+                            <p>Frameworks and tools change rapidly. The most successful software engineers prioritize fundamental computer science principles and continuous learning over memorizing syntax.</p>
+                        </div>
+
+                        <div class="future-box">
+                            <h3>📈 Clear Career Progression</h3>
+                            <p>Start as a Junior Developer, advance to Senior Engineer, then choose between Technical Leadership/Architecture or Engineering Management routes.</p>
+                        </div>
                     </div>
 
-                    <div class="future-box">
-                        <h3>🔄 Lifelong Adaptability</h3>
-                        <p>Frameworks and tools change rapidly. The most successful software engineers prioritize fundamental computer science principles and continuous learning over memorizing syntax.</p>
-                    </div>
-
-                    <div class="future-box">
-                        <h3>📈 Clear Career Progression</h3>
-                        <p>Start as a Junior Developer, advance to Senior Engineer, then choose between Technical Leadership/Architecture or Engineering Management routes.</p>
+                    <div class="cta-banner">
+                        <div>
+                            <h3>Ready to write your first line of code?</h3>
+                            <p>Start with languages like Python or JavaScript today!</p>
+                        </div>
+                        <button class="btn-primary" onclick="alert('Pick a language (e.g. JavaScript or Python) and build a simple practice project today!')">Start Your Journey 🚀</button>
                     </div>
                 </div>
+            </section>
 
-                <div class="cta-banner">
-                    <div>
-                        <h3>Ready to write your first line of code?</h3>
-                        <p>Start with languages like Python or JavaScript today!</p>
-                    </div>
-                    <button class="btn-primary" onclick="alert('Pick a language (e.g. JavaScript or Python) and build a simple practice project today!')">Start Your Journey 🚀</button>
-                </div>
-            </div>
-        </section>
-
+        </div>
     </main>
 
-    <!-- Slide Navigation Footer -->
+    <!-- Slide Navigation Footer (Always Fixed At Bottom of Viewport) -->
     <footer class="footer-nav">
         <button id="prevBtn" class="nav-btn" disabled>
             <span>←</span> Previous
